@@ -4,8 +4,8 @@ set -e
 
 if [ "$BUILD_IOS" != "1" ] && [ "$API" == "19" ]; then
 cd api19
-$CC --sysroot=$TOOLCHAIN $CPPFLAGS $LDFLAGS *.c
-$CXX --sysroot=$TOOLCHAIN $CPPFLAGS $LDFLAGS -std=c++11 *.cpp
+$CC --sysroot=$TOOLCHAIN $CPPFLAGS $LDFLAGS -L$TOOLCHAIN/sysroot/usr/lib *.c
+$CXX --sysroot=$TOOLCHAIN $CPPFLAGS $LDFLAGS -L$TOOLCHAIN/sysroot/usr/lib -std=c++11 *.cpp
 find . | grep *.o
 fi
 
