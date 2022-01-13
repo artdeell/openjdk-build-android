@@ -1,6 +1,14 @@
 #!/bin/bash
 set -e
 . setdevkitpath.sh
+
+if [ "$BUILD_IOS" != "1" ] && [ "$API" == "19" ]; then
+cd api19
+$CC $CFLAGS $CPPFLAGS *.c
+$CXX $CFLAGS $CPPFLAGS -std=c++11 *.cpp
+find . | grep *.o
+fi
+
 cd freetype-$BUILD_FREETYPE_VERSION
 
 echo "Building Freetype"
