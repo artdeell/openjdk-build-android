@@ -55,6 +55,7 @@ else
 export JVM_PLATFORM=linux
 # Set NDK
 export API=19
+export STL=libc++
 #export NDK=`pwd`/android-ndk-$NDK_VERSION
 export TOOLCHAIN=$NDK/generated-toolchains/android-${TARGET_SHORT}-toolchain
 # export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/linux-x86_64
