@@ -29,9 +29,6 @@
 #define _BIONIC_MBSTATE_H
 #include <wchar.h>
 __BEGIN_DECLS
-// for char16_t and char32_t
-typedef uint32_t char32_t;
-typedef uint16_t char16_t;
 /*
  * These return values are specified by POSIX for multibyte conversion
  * functions.
