@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 . setdevkitpath.sh
-API19=$GITHUB_WORKSPACE/api19
+API19="$(pwd)/api19"
 if [ "$BUILD_IOS" != "1" ] && [ "$API" == "19" ]; then
 cd $API19
 $CC -c -I$API19/include *.c
