@@ -30,6 +30,7 @@
 #include <uchar.h>
 #include <wchar.h>
 #include "private/bionic_mbstate.h"
+#include <algorithm>
 size_t mbrtoc32(char32_t* pc32, const char* s, size_t n, mbstate_t* ps) {
   static mbstate_t __private_state;
   mbstate_t* state = (ps == NULL) ? &__private_state : ps;
@@ -93,7 +94,7 @@ size_t mbrtoc32(char32_t* pc32, const char* s, size_t n, mbstate_t* ps) {
   // Fill in the state.
   size_t bytes_wanted = length - bytes_so_far;
   size_t i;
-  for (i = 0; i < MIN(bytes_wanted, n); i++) {
+  for (i = 0; i < std::min(bytes_wanted, n); i++) {
     if (!mbsinit(state) && ((*s & 0xc0) != 0x80)) {
       // Malformed input; bad characters in the middle of a character.
       return reset_and_return_illegal(EILSEQ, state);
