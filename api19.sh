@@ -12,7 +12,7 @@ $CC -v -c -I$API19/include *.c
 $CXX -v -c -I$API19/include -std=c++11 *.cpp
 find . | grep .o
 
-cpo () { mkdir -p $JDKOUT/objs/$2/ && cp &1 &_ }
+cpo () { mkdir -p $JDKOUT/objs/$2/ && cp &1 &_; }
 cpo *32*.o libtinyiconv
 
 fi
