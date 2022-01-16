@@ -23,10 +23,9 @@ fi
 
 # Some modifies to NDK to fix
 
-echo "./getlibs.sh" && $_ &> /dev/null
-echo "./buildlibs.sh" && $_ &> /dev/null
-echo "./clonejdk.sh" && $_ &> /dev/null
-echo "./buildjdk.sh" && $_ &> /dev/null
-cat openjdk/build/*/make-support/failure-logs/*.log
+./getlibs.sh
+./buildlibs.sh
+./clonejdk.sh
+./buildjdk.sh
 ./removejdkdebuginfo.sh
 ./tarjdk.sh
