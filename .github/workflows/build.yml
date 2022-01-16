@@ -22,7 +22,7 @@ jobs:
       run: bash "ci_build_arch_${{matrix.arch}}.sh"
     - name: Show log
       if: ${{ failure() }}
-      run: cd openjdk/$LOGPATH && cat *.log
+      run: cd openjdk/$LOGPATH && cat *.log && exit 1
     - name: Upload JDK build output
       uses: actions/upload-artifact@v2
       with:
