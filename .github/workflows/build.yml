@@ -19,11 +19,10 @@ jobs:
       with:
         java-version: 1.16
     - name: Build with CI build script
-      id: buildjdk
       run: bash "ci_build_arch_${{matrix.arch}}.sh"
-    - name: Show failure
-      if: steps.buildjdk.outputs.FAIL == 'true'
-      run: cat openjdk/build/*/make-support/failure-logs/*.log
+    - name: Show log
+      if: ${{ failure() }}
+      run: cd openjdk/build && cat $(find . | grep .log)
     - name: Upload JDK build output
       uses: actions/upload-artifact@v2
       with:
