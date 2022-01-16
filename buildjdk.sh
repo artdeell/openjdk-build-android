@@ -88,6 +88,7 @@ if [ "$error_code" -ne 0 ]; then
 fi
 
 cd build/${JVM_PLATFORM}-${TARGET_JDK}-${JVM_VARIANTS}-${JDK_DEBUG_LEVEL}
+echo "LOGPATH=$_/make-support/failed-logs">>$GITHUB_ENV
 make JOBS=4 images
 
 #if [ "$error_code" -ne 0 ]; then
