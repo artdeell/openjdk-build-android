@@ -22,7 +22,7 @@ jobs:
       id: buildjdk
       run: bash "ci_build_arch_${{matrix.arch}}.sh"
     - name: Show failure
-      if: steps.buildjdk.outputs.FAIL = 'true'
+      if: steps.buildjdk.outputs.FAIL == 'true'
       run: cat openjdk/build/*/make-support/failure-logs/*.log
     - name: Upload JDK build output
       uses: actions/upload-artifact@v2
