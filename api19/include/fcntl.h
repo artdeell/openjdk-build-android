@@ -1,5 +1,9 @@
 #include_next <fcntl.h>
 
-__strong_alias(creat64, creat);
-__strong_alias(open64, open);
-__strong_alias(openat64, openat);
+__BEGIN_DECLS
+  
+int creat64(const char* __path, mode_t __mode);
+int openat64(int __dir_fd, const char* __path, int __flags, ...);
+int open64(const char* __path, int __flags, ...);
+
+__END_DECLS
