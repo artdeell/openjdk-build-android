@@ -13,7 +13,7 @@ if [ "$BUILD_IOS" != "1" ]; then
   export NDK=$ANDROID_NDK_HOME
   ./maketoolchain.sh
   # build libapi19.a
-  ./api19.sh
+  chmod +x ./api19.sh && $_
 else
   # OpenJDK 8 iOS port is still in unusable state, so we need build in debug mode
   export JDK_DEBUG_LEVEL=slowdebug
