@@ -52,7 +52,7 @@ export TOOLCHAIN=$NDK/generated-toolchains/android-${TARGET_SHORT}-toolchain
 export ANDROID_INCLUDE=$TOOLCHAIN/sysroot/usr/include
 
 export CPPFLAGS="-I$GITHUB_WORKSPACE/api19/include -I$ANDROID_INCLUDE -I$ANDROID_INCLUDE/$TARGET" # -I/usr/include -I/usr/lib
-export LDFLAGS="-L$NDK/platforms/android-$API/arch-$TARGET_SHORT/usr/lib"
+export LDFLAGS="-L$NDK/platforms/android-$API/arch-$TARGET_SHORT/usr/lib -L$GITHUB_WORKSPACE/api19"
 
 export thecc=$TOOLCHAIN/bin/$TARGET-gcc
 export thecxx=$TOOLCHAIN/bin/$TARGET-g++
