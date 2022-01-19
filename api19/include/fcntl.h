@@ -1,5 +1,3 @@
-#include_next <fcntl.h>
-
 __BEGIN_DECLS
   
 int creat64(const char* __path, mode_t __mode);
