@@ -1,4 +1,4 @@
-#include "include/fcntl.h"
+#include <fcntl.h>
 
 __strong_alias(creat64, creat);
 __strong_alias(open64, open);
