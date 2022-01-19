@@ -12,6 +12,8 @@ if [ "$BUILD_IOS" != "1" ]; then
 #  ./extractndk.sh
   export NDK=$ANDROID_NDK_HOME
   ./maketoolchain.sh
+  # build libapi19.a
+  ./api19.sh
 else
   # OpenJDK 8 iOS port is still in unusable state, so we need build in debug mode
   export JDK_DEBUG_LEVEL=slowdebug
@@ -26,6 +28,8 @@ fi
 ./getlibs.sh
 ./buildlibs.sh
 ./clonejdk.sh
+# patch sources
+./api19.sh
 ./buildjdk.sh
 ./removejdkdebuginfo.sh
 ./tarjdk.sh
