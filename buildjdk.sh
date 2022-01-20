@@ -57,7 +57,8 @@ ln -s -f $CUPS_DIR/cups $ANDROID_INCLUDE/
 
 cd openjdk
 #rm -rf build
-
+grep --include=\*.{gmk} -rnw . -e '-lc' | xargs sed -i 's/-lc/-lc -lapi19/g'
+grep --include=\*.{gmk} -rnw . -e '-lapi19'
 #   --with-extra-cxxflags="$CXXFLAGS -Dchar16_t=uint16_t -Dchar32_t=uint32_t" \
 #   --with-extra-cflags="$CPPFLAGS" \
 #   --with-sysroot="$(xcrun --sdk iphoneos --show-sdk-path)" \
