@@ -9,7 +9,7 @@ cd api19/include-patch
 find . -name "*.h" -type f | sed 's#./##g' | xargs -i  sh -c 'cat {} >> "$ANDROID_INCLUDE"/{}'
 cd ..
 find . -name "*.cpp" -type f | xargs $CXX -c
-$AR rc ./libapi19.a *.o
+$AR rc ./libapi19.a *.o ./arch-$TARGET_JDK/syscalls/*.S
 # well, maybe someday there won't be just one folder in setdevkitpath.sh
 # also copy to toolchain (?)
 LDFLAGS="$LDFLAGS $TOOLCHAIN/sysroot/usr/lib"
