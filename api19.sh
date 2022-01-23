@@ -6,7 +6,8 @@ set -e
 if [ ! -e ./api19/libapi19.a ];
 then
 cd api19/include-patch
-find . -name "*.h" -type f | sed 's#./##g' | xargs -I {} cat {} >> "$ANDROID_INCLUDE"/{}
+find . -name "*.h" -type f | sed 's#./##g' | xargs -I {} "cat {} >> "$ANDROID_INCLUDE"/{} && cat $ANDROID_INCLUDE/{}"
+## hmm lets check
 cd ..
 find . -name "*.cpp" -type f | xargs $CXX -c
 $AR rc ./libapi19.a *.o
