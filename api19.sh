@@ -21,9 +21,7 @@ fi
 if [ -d ./openjdk ];
 then
 cd ./openjdk
-echo "$0: Patching OpenJDK source"
-find . -name "*.gmk" -type f | xargs sed -i 's/-lc/-lc -lapi19/g'
-# check
-find . -name "*.gmk" -type f | xargs egrep -lir --include=*.{gmk} "-lapi19"
+echo "$0: Patching OpenJDK makefiles"
+find . -name "*.gmk" -type f | xargs sed -i 's/(LIBDL)/(LIBDL) -lapi19/g'
 cd ..
 fi
