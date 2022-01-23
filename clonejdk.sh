@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 
-git clone --depth 1 https://github.com/Google61/mobile api19
+git clone --depth 1 https://github.com/Google61/mobile openjdk
