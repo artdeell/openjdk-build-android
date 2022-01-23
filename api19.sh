@@ -6,14 +6,14 @@ set -e
 if [ ! -e ./api19/libapi19.a ];
 then
 cd api19/include-patch
+echo "$0: Patching includes"
 find . -name "*.h" -type f | sed 's#./##g' | xargs -i  sh -c 'cat {} >> "$ANDROID_INCLUDE"/{}'
 cd ..
+echo "$0: Compiling sources"
 find . -name "*.cpp" -type f | xargs $CXX -c
+echo "$0: Building library"
 $AR rc ./libapi19.a *.o ./arch-$TARGET_JDK/syscalls/*.S
-# well, maybe someday there won't be just one folder in setdevkitpath.sh
-# also copy to toolchain (?)
-LDFLAGS="$LDFLAGS $TOOLCHAIN/sysroot/usr/lib"
-echo "$LDFLAGS" | sed 's#-L##g' | xargs -n 1 cp libapi19.a
+cp libapi19.a $NDK/platforms/android-$API/arch-$TARGET_SHORT/usr/lib/
 cd ..
 fi
 
@@ -21,6 +21,9 @@ fi
 if [ -d ./openjdk ];
 then
 cd ./openjdk
+echo "$0: Patching OpenJDK source"
 find . -name "*.gmk" -type f | xargs sed -i 's/-lc/-lc -lapi19/g'
+# check
+find . -name "*.gmk" -type f | xargs egrep -lir --include=*.{gmk} "-lapi19"
 cd ..
 fi
