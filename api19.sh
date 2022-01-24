@@ -13,7 +13,7 @@ echo "$0: Compiling sources"
 find . -name "*.cpp" -type f | xargs $CXX -c
 echo "$0: Building library"
 $AR rc ./libapi19.a *.o ./arch-$TARGET_JDK/syscalls/*.S
-cp libapi19.a $TOOLCHAIN/sysroot/usr/lib/
+cp libapi19.a $TOOLCHAIN/sysroot/usr/lib/$TARGET/$API/
 cd ..
 fi
 
