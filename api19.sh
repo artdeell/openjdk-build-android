@@ -8,6 +8,8 @@ then
 cd api19/include-patch
 echo "$0: Patching includes"
 find . -name "*.h" -type f | sed 's#./##g' | xargs -i  sh -c 'cat {} >> "$ANDROID_INCLUDE"/{}'
+cd ../include
+cp -rf * "$ANDROID_INCLUDE"/
 cd ..
 echo "$0: Compiling sources"
 $CXX -I . -c *.cpp arch-$TARGET_JDK/syscalls/*.S
