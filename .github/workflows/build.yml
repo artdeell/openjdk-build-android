@@ -22,8 +22,8 @@ jobs:
       id: cache-toolchain
       uses: actions/cache@v2.1.7
       with:
-        path: $ANDROID_NDK_HOME/generated-toolchains/android-*-toolchain
-        key: ndk-toolchain-${{matrix.arch}}-19
+        path: android-toolchain
+        key: android-toolchain-${{matrix.arch}}-19
     - name: Set toolchain env
       if: steps.cache-toolchain.outputs.cache-hit == 'true'
       run: echo "CACHED_TOOLCHAIN=1">>$GITHUB_ENV
