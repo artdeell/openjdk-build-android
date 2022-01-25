@@ -15,8 +15,6 @@ echo "$0: Compiling sources"
 $CXX -I . -c *.cpp arch-$TARGET_JDK/syscalls/*.S
 echo "$0: Building library"
 $AR rcv ./libapi19.a *.o
-mkdir -p ../dummy_libs
-cp libapi19.a ../dummy_libs/
 cd ..
 fi
 
@@ -24,7 +22,7 @@ fi
 if [ -d ./openjdk ];
 then
 cd ./openjdk
-echo "$0: Patching OpenJDK makefiles"
-find . -name "*.gmk" -type f | xargs sed -i 's/(LIBDL)/(LIBDL) -lapi19/g'
+#echo "$0: Patching OpenJDK makefiles"
+#find . -name "*.gmk" -type f | xargs sed -i 's/(LIBDL)/(LIBDL) -lapi19/g'
 cd ..
 fi
