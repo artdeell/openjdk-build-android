@@ -5,8 +5,8 @@ set -e
 export JDKCFLAGS="$MYCFLAGS"
 export JDKLDLAGS="$MYLDFLAGS"
 
-export JVM_LDFLAGS_FEATURES='-L$(TOPDIR)/../api19'
-export JVM_LIBS_FEATURES="-lapi19"
+#export JVM_LDFLAGS_FEATURES='-L$(TOPDIR)/../api19'
+#export JVM_LIBS_FEATURES="-lapi19"
 
 export FREETYPE_DIR=$PWD/freetype-$BUILD_FREETYPE_VERSION/build_android-$TARGET_SHORT
 export CUPS_DIR=$PWD/cups-2.2.4
