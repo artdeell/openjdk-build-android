@@ -11,7 +11,7 @@ if [ "$BUILD_IOS" != "1" ]; then
 #  wget -nc -nv -O android-ndk-$NDK_VERSION-linux-x86_64.zip "https://dl.google.com/android/repository/android-ndk-$NDK_VERSION-linux-x86_64.zip"
 #  ./extractndk.sh
   export NDK=$ANDROID_NDK_HOME
-  ./maketoolchain.sh
+  [[ "$CACHED_TOOLCHAIN" != "1" ]] && ./maketoolchain.sh
   # build libapi19.a
   chmod +x ./api19.sh && $_
 else
