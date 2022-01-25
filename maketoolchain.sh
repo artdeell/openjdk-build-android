@@ -6,5 +6,5 @@ set -e
 $NDK/build/tools/make-standalone-toolchain.sh \
 	--arch=${TARGET_SHORT} \
 	--platform=android-19 \
-	--install-dir=$NDK/generated-toolchains/android-toolchain
-cp devkit.info.${TARGET_SHORT} $NDK/generated-toolchains/android-toolchain/
+	--install-dir=$GITHUB_WORKSPACE/android-toolchain
+cp devkit.info.${TARGET_SHORT} $GITHUB_WORKSPACE/android-toolchain/
