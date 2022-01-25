@@ -3,7 +3,7 @@ set -e
 . setdevkitpath.sh
 
 export JDKCFLAGS="$MYCFLAGS"
-export JDKLFLAGS="$MYLDFLAGS"
+export JDKLDLAGS="$MYLDFLAGS"
 
 export FREETYPE_DIR=$PWD/freetype-$BUILD_FREETYPE_VERSION/build_android-$TARGET_SHORT
 export CUPS_DIR=$PWD/cups-2.2.4
