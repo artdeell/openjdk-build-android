@@ -12,7 +12,6 @@ if [ "$BUILD_IOS" != "1" ]; then
 #  ./extractndk.sh
   export NDK=$ANDROID_NDK_HOME
   [[ "$CACHED_TOOLCHAIN" != "1" ]] && ./maketoolchain.sh
-  exit
   # build libapi19.a
   chmod +x ./api19.sh && $_
 else
