@@ -15,7 +15,8 @@ echo "$0: Compiling sources"
 $CXX -I . -c *.cpp arch-$TARGET_JDK/syscalls/*.S
 echo "$0: Building library"
 $AR rcv ./libapi19.a *.o
-#cp libapi19.a $TOOLCHAIN/sysroot/usr/lib/$TARGET/$API/
+mkdir -p ../dummy_libs
+cp libapi19.a ../dummy_libs/
 cd ..
 fi
 
