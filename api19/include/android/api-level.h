@@ -142,13 +142,4 @@ __BEGIN_DECLS
 int android_get_application_target_sdk_version() __INTRODUCED_IN(24);
 #endif /* __ANDROID_API__ >= 24 */
 
-/**
- * Returns the API level of the device we're actually running on, or -1 on failure.
- * The returned values correspond to the named constants in `<android/api-level.h>`,
- * and is equivalent to the Java `Build.VERSION.SDK_INT` API.
- *
- * See also android_get_application_target_sdk_version().
- */
-int android_get_device_api_level();
-
 __END_DECLS
