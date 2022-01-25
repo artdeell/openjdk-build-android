@@ -28,8 +28,6 @@ fi
 ./getlibs.sh
 ./buildlibs.sh
 ./clonejdk.sh
-# patch sources
-./api19.sh
 ./buildjdk.sh
 ./removejdkdebuginfo.sh
 ./tarjdk.sh
