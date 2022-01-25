@@ -51,8 +51,8 @@ export TOOLCHAIN=$NDK/generated-toolchains/android-${TARGET_SHORT}-toolchain
 
 export ANDROID_INCLUDE=$TOOLCHAIN/sysroot/usr/include
 
-export JDKCFLAGS="-I$ANDROID_INCLUDE/$TARGET -I$ANDROID_INCLUDE" # -I/usr/include -I/usr/lib
-export JDKLDFLAGS="-L$GITHUB_WORKSPACE/api19 -L$NDK/platforms/android-$API/arch-$TARGET_SHORT/usr/lib"
+export MYCFLAGS="-I$ANDROID_INCLUDE/$TARGET -I$ANDROID_INCLUDE" # -I/usr/include -I/usr/lib
+export MYLDFLAGS="-L$GITHUB_WORKSPACE/api19 -L$NDK/platforms/android-$API/arch-$TARGET_SHORT/usr/lib"
 
 export thecc=$TOOLCHAIN/bin/$TARGET-gcc
 export thecxx=$TOOLCHAIN/bin/$TARGET-g++
