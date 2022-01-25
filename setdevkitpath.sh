@@ -46,7 +46,7 @@ export JVM_PLATFORM=linux
 # Set NDK
 export API=19
 export NDK=$ANDROID_NDK_HOME
-export TOOLCHAIN=$NDK/generated-toolchains/android-${TARGET_SHORT}-toolchain
+export TOOLCHAIN=$GITHUB_WORKSPACE/android-toolchain
 # export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/linux-x86_64
 
 export ANDROID_INCLUDE=$TOOLCHAIN/sysroot/usr/include
