@@ -2,14 +2,17 @@
 set -e
 . setdevkitpath.sh
 
+export JDKCFLAGS="$MYCFLAGS"
+export JDKLFLAGS="$MYLDFLAGS"
+
 export FREETYPE_DIR=$PWD/freetype-$BUILD_FREETYPE_VERSION/build_android-$TARGET_SHORT
 export CUPS_DIR=$PWD/cups-2.2.4
-export CFLAGS+=" -DLE_STANDALONE -DANDROID" # -I$FREETYPE_DIR -I$CUPS_DI
+export JDKCFLAGS+=" -DLE_STANDALONE -DANDROID" # -I$FREETYPE_DIR -I$CUPS_DI
 if [ "$TARGET_JDK" == "aarch32" ]
 then
-  export CFLAGS+=" -O2"
+  export JDKCFLAGS+=" -O2"
 else
-  export CFLAGS+=" -O3"
+  export JDKCFLAGS+=" -O3"
 fi
 
 # if [ "$TARGET_JDK" == "aarch32" ] || [ "$TARGET_JDK" == "aarch64" ]
@@ -30,7 +33,7 @@ if [ "$BUILD_IOS" != "1" ]; then
   ln -s -f /usr/include/fontconfig $ANDROID_INCLUDE/
   AUTOCONF_x11arg="--x-includes=$ANDROID_INCLUDE/X11"
 
-  export LDFLAGS+=" -L$PWD/dummy_libs"
+  export JDKLDFLAGS+=" -L$PWD/dummy_libs"
 
   sudo apt -y install systemtap-sdt-dev libxtst-dev libasound2-dev libelf-dev libfontconfig1-dev libx11-dev libxext-dev libxrandr-dev libxrender-dev libxtst-dev libxt-dev
 
@@ -62,9 +65,9 @@ cd openjdk
 
 bash ./configure \
     --openjdk-target=$TARGET \
-    --with-extra-cflags="$CFLAGS" \
-    --with-extra-cxxflags="$CFLAGS" \
-    --with-extra-ldflags="$LDFLAGS" \
+    --with-extra-cflags="$JDKCFLAGS" \
+    --with-extra-cxxflags="$JDKCFLAGS" \
+    --with-extra-ldflags="$JDKLDFLAGS" \
     --disable-precompiled-headers \
     --disable-warnings-as-errors \
     --enable-option-checking=fatal \
