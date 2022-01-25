@@ -5,6 +5,9 @@ set -e
 export JDKCFLAGS="$MYCFLAGS"
 export JDKLDLAGS="$MYLDFLAGS"
 
+export JVM_LDFLAGS_FEATURES='-L$(TOPDIR)/../api19'
+export JVM_LIBS_FEATURES="-lapi19"
+
 export FREETYPE_DIR=$PWD/freetype-$BUILD_FREETYPE_VERSION/build_android-$TARGET_SHORT
 export CUPS_DIR=$PWD/cups-2.2.4
 export JDKCFLAGS+=" -DLE_STANDALONE -DANDROID" # -I$FREETYPE_DIR -I$CUPS_DI
@@ -67,7 +70,7 @@ bash ./configure \
     --openjdk-target=$TARGET \
     --with-extra-cflags="$JDKCFLAGS" \
     --with-extra-cxxflags="$JDKCFLAGS" \
-    --with-extra-ldflags="$JDKLDFLAGS --verbose" \
+    --with-extra-ldflags="$JDKLDFLAGS" \
     --disable-precompiled-headers \
     --disable-warnings-as-errors \
     --enable-option-checking=fatal \
