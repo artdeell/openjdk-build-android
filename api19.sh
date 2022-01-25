@@ -10,10 +10,10 @@ echo "$0: Patching includes"
 find . -name "*.h" -type f | sed 's#./##g' | xargs -i  sh -c 'cat {} >> "$ANDROID_INCLUDE"/{}'
 cd ..
 echo "$0: Compiling sources"
-find . -name "*.cpp" -type f | xargs $CXX -c
+$CXX -c *.cpp arch-$TARGET_JDK/syscalls/*.S
 echo "$0: Building library"
-$AR rc ./libapi19.a *.o ./arch-$TARGET_JDK/syscalls/*.S
-cp libapi19.a $TOOLCHAIN/sysroot/usr/lib/$TARGET/$API/
+$AR rcv ./libapi19.a *.o
+#cp libapi19.a $TOOLCHAIN/sysroot/usr/lib/$TARGET/$API/
 cd ..
 fi
 
