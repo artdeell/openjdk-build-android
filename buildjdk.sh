@@ -67,7 +67,7 @@ bash ./configure \
     --openjdk-target=$TARGET \
     --with-extra-cflags="$JDKCFLAGS" \
     --with-extra-cxxflags="$JDKCFLAGS" \
-    --with-extra-ldflags="$JDKLDFLAGS" \
+    --with-extra-ldflags="$JDKLDFLAGS -v" \
     --disable-precompiled-headers \
     --disable-warnings-as-errors \
     --enable-option-checking=fatal \
