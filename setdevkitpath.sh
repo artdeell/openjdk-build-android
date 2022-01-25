@@ -51,8 +51,8 @@ export TOOLCHAIN=$NDK/generated-toolchains/android-${TARGET_SHORT}-toolchain
 
 export ANDROID_INCLUDE=$TOOLCHAIN/sysroot/usr/include
 
-export CPPFLAGS="-I$ANDROID_INCLUDE/$TARGET -I$ANDROID_INCLUDE" # -I/usr/include -I/usr/lib
-export LDFLAGS="-L$NDK/platforms/android-$API/arch-$TARGET_SHORT/usr/lib"
+export JDKCFLAGS="-I$ANDROID_INCLUDE/$TARGET -I$ANDROID_INCLUDE" # -I/usr/include -I/usr/lib
+export JDKLDFLAGS="-L$GITHUB_WORKSPACE/api19 -L$NDK/platforms/android-$API/arch-$TARGET_SHORT/usr/lib"
 
 export thecc=$TOOLCHAIN/bin/$TARGET-gcc
 export thecxx=$TOOLCHAIN/bin/$TARGET-g++
@@ -62,7 +62,7 @@ export AR=$TOOLCHAIN/bin/$TARGET-ar
 export AS=$TOOLCHAIN/bin/$TARGET-as
 export CC=$PWD/android-wrapped-clang
 export CXX=$PWD/android-wrapped-clang++
-export LD="$TOOLCHAIN/bin/$TARGET-ld --verbose"
+export LD=$TOOLCHAIN/bin/$TARGET-ld
 export OBJCOPY=$TOOLCHAIN/bin/$TARGET-objcopy
 export RANLIB=$TOOLCHAIN/bin/$TARGET-ranlib
 export STRIP=$TOOLCHAIN/bin/$TARGET-strip
