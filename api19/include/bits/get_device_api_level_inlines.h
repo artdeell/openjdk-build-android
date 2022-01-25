@@ -44,7 +44,7 @@ __BIONIC_GET_DEVICE_API_LEVEL_INLINE int android_get_device_api_level() {
   int api_level = atoi(value);
   return (api_level > 0) ? api_level : -1;
 */
-  return 19:
+  return 19;
 }
 
 __END_DECLS
