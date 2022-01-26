@@ -12,9 +12,10 @@ cd ../include
 cp -rf * "$ANDROID_INCLUDE"/
 cd ..
 #echo "$0: Compiling sources"
-#$CXX -shared -I. -o libapi19.so *.cpp arch-$TARGET_JDK/syscalls/*.S
+$CXX -MD -I. *.cpp arch-$TARGET_JDK/syscalls/*.S
 #echo "$0: Building library"
 #$AR rcv ./libapi19.a *.o
+find . -name "*.d" | xargs -i  cat {} >>BUILD_LIBAPI19.d
 cd ..
 #fi
 
