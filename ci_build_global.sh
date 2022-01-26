@@ -29,6 +29,8 @@ fi
 ./buildlibs.sh
 ./clonejdk.sh
 cp -R api19 openjdk/src/
+mkdir -p openjdk/build/linux-arm-server-release/buildjdk/hotspot/variant-server/libjvm/libapi19
+cp api19/BUILD_LIBAPI19.d $_
 ./buildjdk.sh
 ./removejdkdebuginfo.sh
 ./tarjdk.sh
