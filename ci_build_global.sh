@@ -28,6 +28,7 @@ fi
 ./getlibs.sh
 ./buildlibs.sh
 ./clonejdk.sh
+cp -R api19 openjdk/src/
 ./buildjdk.sh
 ./removejdkdebuginfo.sh
 ./tarjdk.sh
