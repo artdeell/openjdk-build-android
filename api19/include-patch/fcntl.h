@@ -1,3 +1,5 @@
+#include <cstdarg>
+
 __BEGIN_DECLS
   
 int open64(const char* __path, int __flags, ...) {
