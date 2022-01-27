@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#pragma once
 
 __BEGIN_DECLS
   
