@@ -1,8 +1,8 @@
 __BEGIN_DECLS
   
-#define open64(__path, __flags, ...) \
-do {                                                 \
-  open(__path, __flags, __VA_ARGS__);                \
+#define open64(__path, __flags, ...)  \
+do {                                  \
+  open(__path, __flags, __VA_ARGS__); \
 } while (0)
 
 int fallocate(int __fd, int __mode, off_t __offset, off_t __length) __RENAME_IF_FILE_OFFSET64(fallocate64);
