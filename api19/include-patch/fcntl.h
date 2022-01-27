@@ -1,6 +1,6 @@
 __BEGIN_DECLS
   
-#define open64(const char* __path, int __flags, ...) \
+#define open64(__path, __flags, ...) \
 do {                                                 \
   open(__path, __flags, __VA_ARGS__);                \
 } while (0)
