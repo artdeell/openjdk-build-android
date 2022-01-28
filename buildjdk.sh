@@ -93,6 +93,8 @@ if [ "$error_code" -ne 0 ]; then
   exit $error_code
 fi
 
+cp -rf ../api19/include-jdktime/* "$ANDROID_INCLUDE"/
+
 cd build/${JVM_PLATFORM}-${TARGET_JDK}-${JVM_VARIANTS}-${JDK_DEBUG_LEVEL}
 echo "LOGPATH=$_/make-support/failure-logs">>$GITHUB_ENV
 make JOBS=4 images
