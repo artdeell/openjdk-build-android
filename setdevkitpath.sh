@@ -59,7 +59,7 @@ export thecxx=$TOOLCHAIN/bin/$TARGET-g++
 
 # Configure and build.
 export AR=$TOOLCHAIN/bin/$TARGET-ar
-export AS=$TOOLCHAIN/bin/$TARGET-as
+export AS=$CC
 export CC=$PWD/android-wrapped-clang
 export CXX=$PWD/android-wrapped-clang++
 export LD=$TOOLCHAIN/bin/$TARGET-ld
