@@ -115,7 +115,7 @@ static __inline int sigfillset(sigset_t *set) {
 
 //static __inline sighandler_t signal(int s, sighandler_t f) {
 //  return bsd_signal(s, f);
-}
+//}
 
 __END_DECLS
 
