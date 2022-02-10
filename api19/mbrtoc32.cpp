@@ -29,7 +29,7 @@
 #include <sys/param.h>
 #include <uchar.h>
 #include <wchar.h>
-#include "private/bionic_mbstate.h"
+#include <bionic_mbstate.h>
 #include <algorithm>
 size_t mbrtoc32(char32_t* pc32, const char* s, size_t n, mbstate_t* ps) {
   static mbstate_t __private_state;
