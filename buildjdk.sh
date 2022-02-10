@@ -58,7 +58,7 @@ ln -s -f $CUPS_DIR/cups $ANDROID_INCLUDE/
 # api19: patch toolchain, build libapi19
 cd api19
 cp -rf include-ndk/* "$ANDROID_INCLUDE"/
-$CXX -I./include -c *.cpp
+$CXX -I./include -c -std=c++11 *.cpp
 $CC -I./include -c *.c
 $AR rcv ./libapi19.a *.o
 cd ..
