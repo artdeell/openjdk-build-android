@@ -55,6 +55,14 @@ fi
 # fix building libjawt
 ln -s -f $CUPS_DIR/cups $ANDROID_INCLUDE/
 
+# api19: patch toolchain, build libapi19
+cd api19
+cp -rf include-ndk/* "$ANDROID_INCLUDE"/
+$CXX -I./include -c *.cpp
+$CC -I./include -c *.c
+$AR rcv ./libapi19.a *.o
+cd ..
+
 cd openjdk
 #rm -rf build
 grep --include=\*.{gmk} -rnw . -e '-lc' | xargs sed -i 's/-lc/-lc -lapi19/g'
