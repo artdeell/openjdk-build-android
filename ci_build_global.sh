@@ -23,7 +23,7 @@ fi
 
 ./getlibs.sh
 ./buildlibs.sh
-[[ -d ./openjdk ]] || ./clonejdk.sh
+./clonejdk.sh
 ./buildjdk.sh
 ./removejdkdebuginfo.sh
 ./tarjdk.sh
