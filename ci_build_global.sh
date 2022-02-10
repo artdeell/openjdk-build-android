@@ -7,7 +7,7 @@ export JDK_DEBUG_LEVEL=release
 if [ "$BUILD_IOS" != "1" ]; then
   sudo apt update
   sudo apt -y install autoconf python unzip zip
-
+  export NDK=$ANDROID_NDK_HOME
   ./maketoolchain.sh
 else
   chmod +x ios-arm64-clang
