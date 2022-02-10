@@ -28,7 +28,7 @@
 #include <errno.h>
 #include <uchar.h>
 #include <wchar.h>
-#include "private/bionic_mbstate.h"
+#include <bionic_mbstate.h>
 size_t c32rtomb(char* s, char32_t c32, mbstate_t* ps) {
   static mbstate_t __private_state;
   mbstate_t* state = (ps == NULL) ? &__private_state : ps;
