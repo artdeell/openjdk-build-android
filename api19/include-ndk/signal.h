@@ -80,6 +80,14 @@ int sigaddset64(sigset64_t* __set, int __signal) __INTRODUCED_IN(28);
 int sigdelset64(sigset64_t* __set, int __signal) __INTRODUCED_IN(28);
 //#endif /* __ANDROID_API__ >= 28 */
 
+//#if __ANDROID_API__ >= 28
+int sigprocmask64(int __how, const sigset64_t* __new_set, sigset64_t* __old_set) __INTRODUCED_IN(28);
+//#endif /* __ANDROID_API__ >= 28 */
+
+//#if __ANDROID_API__ >= 28
+int sigemptyset64(sigset64_t* __set) __INTRODUCED_IN(28);
+//#endif /* __ANDROID_API__ >= 28 */
+
 #if __ANDROID_API__ >= __ANDROID_API_L__
 sighandler_t signal(int __signal, sighandler_t __handler) __INTRODUCED_IN(21);
 int sigaddset(sigset_t* __set, int __signal) __INTRODUCED_IN(21);
@@ -87,10 +95,6 @@ int sigaddset(sigset_t* __set, int __signal) __INTRODUCED_IN(21);
 int sigdelset(sigset_t* __set, int __signal) __INTRODUCED_IN(21);
 
 int sigemptyset(sigset_t* __set) __INTRODUCED_IN(21);
-
-#if __ANDROID_API__ >= 28
-int sigemptyset64(sigset64_t* __set) __INTRODUCED_IN(28);
-#endif /* __ANDROID_API__ >= 28 */
 
 int sigfillset(sigset_t* __set) __INTRODUCED_IN(21);
 
@@ -116,9 +120,6 @@ int sigpending64(sigset64_t* __set) __INTRODUCED_IN(28);
 
 int sigprocmask(int __how, const sigset_t* __new_set, sigset_t* __old_set);
 
-#if __ANDROID_API__ >= 28
-int sigprocmask64(int __how, const sigset64_t* __new_set, sigset64_t* __old_set) __INTRODUCED_IN(28);
-#endif /* __ANDROID_API__ >= 28 */
 
 int sigsuspend(const sigset_t* __mask);
 
