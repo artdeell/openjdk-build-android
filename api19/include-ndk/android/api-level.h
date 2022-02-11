@@ -38,7 +38,7 @@
 
 #define __ANDROID_API__ 19
 
-#define _GNU_SOURCES
+#define _GNU_SOURCE
 #define __arm__
 
 #include <sys/cdefs.h>
