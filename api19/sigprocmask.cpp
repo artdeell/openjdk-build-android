@@ -28,7 +28,7 @@
 
 #include <errno.h>
 #include <signal.h>
-
+#include <signal_types.h>
 #include <reserved_signals.h>
 
 #include <SigSetConverter.h>
