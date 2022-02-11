@@ -39,6 +39,7 @@
 #define __BIONIC__ 1
 
 
+#define __ANDROID__
 #define __has_builtin(x) 0
 #define __has_include(x) 0
 
