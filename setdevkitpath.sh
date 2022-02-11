@@ -62,8 +62,8 @@ export TOOLCHAIN=$NDK/generated-toolchains/android-${TARGET_SHORT}-toolchain
 
 export ANDROID_INCLUDE=$TOOLCHAIN/sysroot/usr/include
 
-export CFLAGS="-D__INTRODUCED_IN"
-export CPPFLAGS="-D__INTRODUCED_IN -I$ANDROID_INCLUDE -I$ANDROID_INCLUDE/$TARGET" # -I/usr/include -I/usr/lib
+export CFLAGS="-D__INTRODUCED_IN -D__ANDROID_API__=19"
+export CPPFLAGS="-D__INTRODUCED_IN -D__ANDROID_API__=19 -I$ANDROID_INCLUDE -I$ANDROID_INCLUDE/$TARGET" # -I/usr/include -I/usr/lib
 export LDFLAGS="-L$NDK/platforms/android-$API/arch-$TARGET_SHORT/usr/lib"
 
 # Configure and build.
