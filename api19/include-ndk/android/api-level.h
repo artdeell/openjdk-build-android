@@ -36,10 +36,12 @@
  * https://android.googlesource.com/platform/bionic/+/master/docs/defines.md.
  */
 
+// a bit of hardcoding, as openjdk c/cpp/cxxflags are mess
 #define __ANDROID_API__ 19
-
 #define _GNU_SOURCE
 #define __arm__
+// old headers use this
+#define __BSD_VISIBLE
 
 #include <sys/cdefs.h>
 
