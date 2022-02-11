@@ -44,8 +44,6 @@
 #define __has_include(x) 0
 
 // old libc++ compat
-#define _GLIBCXX_USE_C99_CTYPE_TR1
-
 #if defined(__ANDROID__) && !defined(__LP64__) && defined( __arm__)
 #define __NDK_FPABI__ __attribute__((pcs("aapcs")))
 #else
@@ -57,7 +55,7 @@
 #else
 #define __NDK_FPABI_MATH__  /* nothing */
 #endif
-
+//
 
 #if defined(__cplusplus)
 #define __BEGIN_DECLS extern "C" {
