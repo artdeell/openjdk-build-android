@@ -43,7 +43,9 @@
 #define __has_builtin(x) 0
 #define __has_include(x) 0
 
-// gcc compat
+// old libc++ compat
+#define _GLIBCXX_USE_C99_CTYPE_TR1
+
 #if defined(__ANDROID__) && !defined(__LP64__) && defined( __arm__)
 #define __NDK_FPABI__ __attribute__((pcs("aapcs")))
 #else
