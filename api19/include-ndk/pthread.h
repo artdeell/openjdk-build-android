@@ -36,8 +36,6 @@
 #include <sys/types.h>
 #include <time.h>
 
-#include <ndkdefs.h>
-
 __BEGIN_DECLS
 
 enum {
