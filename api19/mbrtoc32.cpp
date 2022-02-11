@@ -25,6 +25,7 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+#define _GLIBCXX_USE_C99_CTYPE_TR1
 #include <errno.h>
 #include <sys/param.h>
 #include <uchar.h>
