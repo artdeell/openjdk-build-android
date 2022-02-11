@@ -113,10 +113,13 @@ static __inline int sigfillset(sigset_t *set) {
   return 0;
 }
 
+/*
 static __inline sighandler_t signal(int s, sighandler_t f) {
   return bsd_signal(s, f);
 }
-
+*/
+// defined by jsig
+sighandler_t signal(int __signal, sighandler_t __handler);
 __END_DECLS
 
 #endif /* __ANDROID_API__ < __ANDROID_API_L__ */
