@@ -33,6 +33,8 @@
 #include <linux/sched.h>
 #include <sys/cdefs.h>
 
+#include <ndkdefs.h>
+
 __BEGIN_DECLS
 
 /* This name is used by glibc, but not by the kernel. */
