@@ -36,12 +36,6 @@
  * https://android.googlesource.com/platform/bionic/+/master/docs/defines.md.
  */
 
-#define __INTRODUCED_IN(x)
-#define __INTRODUCED_IN_64(x)
-#define __INTRODUCED_IN_ARM(x)
-#define __INTRODUCED_IN_MIPS(x)
-#define __INTRODUCED_IN_X86(x)
-
 #define __ANDROID_API__ 19
 
 #define __USE_GNU
