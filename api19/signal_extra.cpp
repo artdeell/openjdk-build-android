@@ -33,3 +33,15 @@ int SigDelSet(SigSetT* set, int sig) {
 int sigdelset64(sigset64_t* set, int sig) {
   return SigDelSet(set, sig);
 }
+template <typename SigSetT>
+int SigEmptySet(SigSetT* set) {
+  if (set == nullptr) {
+    errno = EINVAL;
+    return -1;
+  }
+  memset(set, 0, sizeof(*set));
+  return 0;
+}
+int sigemptyset64(sigset64_t* set) {
+  return SigEmptySet(set);
+}
