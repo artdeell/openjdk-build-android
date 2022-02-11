@@ -38,8 +38,23 @@
 
 #define __BIONIC__ 1
 
+
 #define __has_builtin(x) 0
 #define __has_include(x) 0
+
+// gcc compat
+#if defined(__ANDROID__) && !defined(__LP64__) && defined( __arm__)
+#define __NDK_FPABI__ __attribute__((pcs("aapcs")))
+#else
+#define __NDK_FPABI__
+#endif
+
+#if (!defined(_NDK_MATH_NO_SOFTFP) || _NDK_MATH_NO_SOFTFP != 1) && !defined(__clang__)
+#define __NDK_FPABI_MATH__ __NDK_FPABI__
+#else
+#define __NDK_FPABI_MATH__  /* nothing */
+#endif
+
 
 #if defined(__cplusplus)
 #define __BEGIN_DECLS extern "C" {
