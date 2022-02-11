@@ -41,7 +41,7 @@
 #define __arm__
 #define _GNU_SOURCE
 // old headers use this
-#define __BSD_VISIBLE
+#define __BSD_VISIBLE 1
 
 #include <sys/cdefs.h>
 
