@@ -32,8 +32,6 @@
 #include <sys/cdefs.h>
 #include <sys/types.h>
 
-#include <ndkdefs.h>
-
 typedef struct {
   uint32_t flags;
   void* stack_base;
