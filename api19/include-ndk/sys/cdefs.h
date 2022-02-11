@@ -38,6 +38,9 @@
 
 #define __BIONIC__ 1
 
+#define __has_builtin(x) 0
+#define __has_include(x) 0
+
 #if defined(__cplusplus)
 #define __BEGIN_DECLS extern "C" {
 #define __END_DECLS }
