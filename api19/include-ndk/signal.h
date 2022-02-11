@@ -72,19 +72,19 @@ int sigaction64(int __signal, const struct sigaction64* __new_action, struct sig
 
 int siginterrupt(int __signal, int __flag);
 
-#if __ANDROID_API__ >= __ANDROID_API_L__
-sighandler_t signal(int __signal, sighandler_t __handler) __INTRODUCED_IN(21);
-int sigaddset(sigset_t* __set, int __signal) __INTRODUCED_IN(21);
-
 //#if __ANDROID_API__ >= 28
 int sigaddset64(sigset64_t* __set, int __signal) __INTRODUCED_IN(28);
 //#endif /* __ANDROID_API__ >= 28 */
 
-int sigdelset(sigset_t* __set, int __signal) __INTRODUCED_IN(21);
-
 //#if __ANDROID_API__ >= 28
 int sigdelset64(sigset64_t* __set, int __signal) __INTRODUCED_IN(28);
 //#endif /* __ANDROID_API__ >= 28 */
+
+#if __ANDROID_API__ >= __ANDROID_API_L__
+sighandler_t signal(int __signal, sighandler_t __handler) __INTRODUCED_IN(21);
+int sigaddset(sigset_t* __set, int __signal) __INTRODUCED_IN(21);
+
+int sigdelset(sigset_t* __set, int __signal) __INTRODUCED_IN(21);
 
 int sigemptyset(sigset_t* __set) __INTRODUCED_IN(21);
 
