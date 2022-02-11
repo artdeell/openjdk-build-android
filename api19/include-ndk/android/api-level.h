@@ -44,6 +44,9 @@
 
 #define __ANDROID_API__ 19
 
+#define __USE_GNU
+#define __arm__
+
 #include <sys/cdefs.h>
 
 __BEGIN_DECLS
