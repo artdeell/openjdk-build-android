@@ -27,20 +27,51 @@
  */
 #ifndef _BIONIC_MBSTATE_H
 #define _BIONIC_MBSTATE_H
+#include <errno.h>
 #include <wchar.h>
 __BEGIN_DECLS
 /*
  * These return values are specified by POSIX for multibyte conversion
  * functions.
  */
+
+#ifdef __cplusplus
 #define __MB_ERR_ILLEGAL_SEQUENCE static_cast<size_t>(-1)
 #define __MB_ERR_INCOMPLETE_SEQUENCE static_cast<size_t>(-2)
+#else
+#define __MB_ERR_ILLEGAL_SEQUENCE (size_t)(-1)
+#define __MB_ERR_INCOMPLETE_SEQUENCE (size_t)(-2)
+#endif // __cplusplus
 #define __MB_IS_ERR(rv) (rv == __MB_ERR_ILLEGAL_SEQUENCE || \
                          rv == __MB_ERR_INCOMPLETE_SEQUENCE)
-size_t mbstate_bytes_so_far(const mbstate_t* ps);
-void mbstate_set_byte(mbstate_t* ps, int i, char byte);
-uint8_t mbstate_get_byte(const mbstate_t* ps, int n);
-size_t reset_and_return_illegal(int _errno, mbstate_t* ps);
-size_t reset_and_return(int _return, mbstate_t* ps);
+static inline __wur size_t mbstate_bytes_so_far(const mbstate_t* ps) {
+  return
+      (ps->__seq[2] != 0) ? 3 :
+      (ps->__seq[1] != 0) ? 2 :
+      (ps->__seq[0] != 0) ? 1 : 0;
+}
+static inline void mbstate_set_byte(mbstate_t* ps, int i, char byte) {
+  ps->__seq[i] = (uint8_t)(byte);
+}
+static inline __wur uint8_t mbstate_get_byte(const mbstate_t* ps, int n) {
+  return ps->__seq[n];
+}
+static inline __wur size_t mbstate_reset_and_return_illegal(int _errno, mbstate_t* ps) {
+  errno = _errno;
+#ifdef __cplusplus
+  *(reinterpret_cast<uint32_t*>(ps->__seq)) = 0;
+#else
+  *(uint32_t*)(ps->__seq) = 0;
+#endif // __cplusplus
+  return __MB_ERR_ILLEGAL_SEQUENCE;
+}
+static inline __wur size_t mbstate_reset_and_return(int _return, mbstate_t* ps) {
+#ifdef __cplusplus
+  *(reinterpret_cast<uint32_t*>(ps->__seq)) = 0;
+#else
+  *(uint32_t*)(ps->__seq) = 0;
+#endif // __cplusplus
+  return _return;
+}
 __END_DECLS
 #endif // _BIONIC_MBSTATE_H
