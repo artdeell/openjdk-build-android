@@ -117,7 +117,6 @@ static __inline int sigfillset(sigset_t *set) {
 static __inline sighandler_t signal(int s, sighandler_t f) {
   return bsd_signal(s, f);
 }
-*/
 #else
 sighandler_t signal(int __signal, sighandler_t __handler);
 #endif
