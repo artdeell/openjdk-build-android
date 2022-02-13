@@ -61,9 +61,9 @@ export TOOLCHAIN=$NDK/generated-toolchains/android-${TARGET_SHORT}-toolchain
 # export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/linux-x86_64
 
 export ANDROID_INCLUDE=$TOOLCHAIN/sysroot/usr/include
-
+export SYSROOT_NEW=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi
 export CPPFLAGS="-I$ANDROID_INCLUDE -I$ANDROID_INCLUDE/$TARGET" # -I/usr/include -I/usr/lib
-export LDFLAGS="-L$NDK/platforms/android-$API/arch-$TARGET_SHORT/usr/lib -L$GITHUB_WORKSPACE/api19"
+export LDFLAGS="-L$SYSROOT_NEW/$API -L$SYSROOT_NEW -L$NDK/platforms/android-$API/arch-$TARGET_SHORT/usr/lib -L$GITHUB_WORKSPACE/api19"
 
 # Configure and build.
 export AR=$TOOLCHAIN/bin/$TARGET-ar
