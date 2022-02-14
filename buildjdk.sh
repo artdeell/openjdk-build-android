@@ -61,7 +61,7 @@ cp -rf include-ndk/* "$ANDROID_INCLUDE"/
 $CXX -I./include -c -std=c++11 *.cpp
 $CC -I./include -c *.c
 $CCNEW -I./include -c syscalls/*.S
-$AR rcv ./libapi19.a *.o syscalls/*.o
+$AR rcv ./libapi19.a *.o
 #export CFLAGS+=" -D__ANDROID_API__=19"
 cd ..
 
