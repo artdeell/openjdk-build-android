@@ -37,15 +37,15 @@
 #define __bionic_asm_function_type @function
 
 #if defined(__aarch64__)
-#include <private/bionic_asm_arm64.h>
+#include <bionic_asm_arm64.h>
 #elif defined(__arm__)
-#include <private/bionic_asm_arm.h>
+#include <bionic_asm_arm.h>
 #elif defined(__i386__)
-#include <private/bionic_asm_x86.h>
+#include <bionic_asm_x86.h>
 #elif defined(__mips__)
-#include <private/bionic_asm_mips.h>
+#include <bionic_asm_mips.h>
 #elif defined(__x86_64__)
-#include <private/bionic_asm_x86_64.h>
+#include <bionic_asm_x86_64.h>
 #endif
 
 #define ENTRY_NO_DWARF(f) \
