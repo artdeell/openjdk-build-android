@@ -61,7 +61,7 @@ export TOOLCHAIN=$NDK/generated-toolchains/android-${TARGET_SHORT}-toolchain
 # export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/linux-x86_64
 
 export ANDROID_INCLUDE=$TOOLCHAIN/sysroot/usr/include
-export NEW_TOOLCHAIN=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64
+export NEW_TOOLCHAIN=$GITHUB_WORKSPACE/android-toolchain
 export NEW_INCLUDE=$NEW_TOOLCHAIN/sysroot/usr/include
 export NEW_CC=$NEW_TOOLCHAIN/bin/armv7a-linux-androideabi19-clang
 export CPPFLAGS="-I$ANDROID_INCLUDE -I$ANDROID_INCLUDE/$TARGET" # -I/usr/include -I/usr/lib
