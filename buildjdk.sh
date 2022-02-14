@@ -58,7 +58,7 @@ ln -s -f $CUPS_DIR/cups $ANDROID_INCLUDE/
 cd api19
 cp -rf include-ndk/* "$ANDROID_INCLUDE"/
 cp -rf include-ndk/* "$NEW_INCLUDE"/
-$NEW_CC++ -I./include -c -std=c++11 *.cpp
+$NEW_CC++ -I./include -c -std=c++11 -DNEW_UCHAR *.cpp
 $NEW_CC -I./include -c *.c
 $NEW_CC -I./include -c syscalls/*.S
 $AR rcv lib/libapi19.a *.o
