@@ -62,6 +62,8 @@ $NEW_CC++ -I./include -c -std=c++11 -DNEW_UCHAR *.cpp
 $NEW_CC -I./include -c *.c
 $NEW_CC -I./include -c syscalls/*.S
 $NEW_CC -shared -o lib/libapi19.so *.o
+mkdir -p ../jre_override/lib/aarch32
+cp lib/libapi19.so $_
 cd ..
 
 cd openjdk
