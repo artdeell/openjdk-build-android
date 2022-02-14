@@ -39,8 +39,6 @@
 #include "macros.h"
 #include "grp_pwd.h"
 
-#define __has_feature(x) 0
-
 /** WARNING WARNING WARNING
  **
  ** This header file is *NOT* part of the public Bionic ABI/API and should not
