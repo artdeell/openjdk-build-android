@@ -28,8 +28,6 @@
 
 #pragma once
 
-#define __has_feature(x) 0
-
 #include <pthread.h>
 #include <stdatomic.h>
 
