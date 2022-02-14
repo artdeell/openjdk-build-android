@@ -34,10 +34,12 @@
 #include <sys/cdefs.h>
 #include <sys/param.h>
 
-#include <platform/bionic/tls.h>
+#include "tls.h"
 
-#include "platform/bionic/macros.h"
+#include "macros.h"
 #include "grp_pwd.h"
+
+#define __has_feature(x) 0
 
 /** WARNING WARNING WARNING
  **
