@@ -5,7 +5,6 @@ set -e
   
 $NDK/build/tools/make-standalone-toolchain.sh \
 	--system=linux-x86_64 \
-	–-stl=libc++ \
 	--arch=${TARGET_SHORT} \
 	--platform=android-$API \
 	--install-dir=$NDK/generated-toolchains/android-${TARGET_SHORT}-toolchain
