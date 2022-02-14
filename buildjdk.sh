@@ -61,7 +61,7 @@ cp -rf include-ndk/* "$NEW_INCLUDE"/
 $NEW_CC++ -I./include -c -std=c++11 -DNEW_UCHAR *.cpp
 $NEW_CC -I./include -c *.c
 $NEW_CC -I./include -c syscalls/*.S
-$AR rcv lib/libapi19.a *.o
+$NEW_CC -shared -o lib/libapi19.so *.o
 cd ..
 
 cd openjdk
