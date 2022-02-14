@@ -32,11 +32,11 @@
 
 #include <sys/cdefs.h>
 
-#if defined(__cplusplus) && __cplusplus >= 201103L && defined(_USING_LIBCXX)
-# if __has_feature(cxx_atomic)
+//#if defined(__cplusplus) && __cplusplus >= 201103L && defined(_USING_LIBCXX)
+//# if __has_feature(cxx_atomic)
 #  define _STDATOMIC_HAVE_ATOMIC
-# endif
-#endif
+//# endif
+//#endif
 
 #ifdef _STDATOMIC_HAVE_ATOMIC
 
@@ -125,7 +125,8 @@ using std::atomic_ptrdiff_t;
 using std::atomic_intmax_t;
 using std::atomic_uintmax_t;
 
-#else /* <atomic> unavailable, possibly because this is C, not C++ */
+#endif
+#ifdef STDATOMIC_PROVIDE_C /* <atomic> unavailable, possibly because this is C, not C++ */
 
 #include <sys/types.h>
 #include <stdbool.h>
