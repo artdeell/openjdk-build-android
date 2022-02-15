@@ -29,6 +29,10 @@ sudo cp -R jre_override/lib/* jreout/lib/
 sudo cp -R jre_override/lib/* jdkout/jre/lib
 
 cd jreout
+patchelf --add-needed libgnustl_shared.so lib/aarch32/libapi19.so
+patchelf --add-needed libapi19.so lib/aarch32/client/libjvm.so
+patchelf --set-rpath '$ORIGIN:$ORIGIN/..' lib/aarch32/client/libjvm.so
+patchelf --set-rpath '$ORIGIN' lib/aarch32/libapi19.so
 tar cJf ../jre8-${TARGET_SHORT}-`date +%Y%m%d`-${JDK_DEBUG_LEVEL}.tar.xz .
 
 cd ../jdkout
