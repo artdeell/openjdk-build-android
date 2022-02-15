@@ -29,6 +29,8 @@ sudo cp -R jre_override/lib/* jreout/lib/
 sudo cp -R jre_override/lib/* jdkout/jre/lib
 
 cd jreout
+chmod 777 lib/aarch32/libapi19.so
+chmod 777 lib/aarch32/client/libjvm.so
 patchelf --add-needed libgnustl_shared.so lib/aarch32/libapi19.so
 patchelf --add-needed libapi19.so lib/aarch32/client/libjvm.so
 patchelf --set-rpath '$ORIGIN:$ORIGIN/..' lib/aarch32/client/libjvm.so
