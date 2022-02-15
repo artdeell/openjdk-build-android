@@ -35,8 +35,8 @@ sudo patchelf --add-needed libgnustl_shared.so lib/aarch32/libapi19.so
 sudo patchelf --add-needed libapi19.so lib/aarch32/client/libjvm.so
 sudo patchelf --set-rpath '$ORIGIN:$ORIGIN/..' lib/aarch32/client/libjvm.so
 sudo patchelf --set-rpath '$ORIGIN' lib/aarch32/libapi19.so
-tar cJf ../jre8-${TARGET_SHORT}-`date +%Y%m%d`-${JDK_DEBUG_LEVEL}.tar.xz .
+sudo tar cJf ../jre8-${TARGET_SHORT}-`date +%Y%m%d`-${JDK_DEBUG_LEVEL}.tar.xz .
 
 cd ../jdkout
-tar cJf ../jdk8-${TARGET_SHORT}-`date +%Y%m%d`-${JDK_DEBUG_LEVEL}.tar.xz .
+sudo tar cJf ../jdk8-${TARGET_SHORT}-`date +%Y%m%d`-${JDK_DEBUG_LEVEL}.tar.xz .
 
