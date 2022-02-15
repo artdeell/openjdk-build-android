@@ -64,6 +64,7 @@ $NEW_CC -I./include -c syscalls/*.S
 $NEW_CC -shared -o lib/libapi19.so *.o
 mkdir -p ../jre_override/lib/aarch32
 cp lib/libapi19.so $_
+cp $NDK/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi-v7a-hard/libgnustl_shared.so $_
 cd ..
 
 cd openjdk
