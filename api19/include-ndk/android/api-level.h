@@ -37,7 +37,7 @@
  */
 
 // openjdk c/cpp/cxxflags are mess
-#define __ANDROID_API__ 19
+#define __ANDROID_API__ 9
 #define __arm__
 #define _GNU_SOURCE
 // old headers use this
