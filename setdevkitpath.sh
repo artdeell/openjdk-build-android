@@ -63,7 +63,7 @@ export TOOLCHAIN=$NDK/generated-toolchains/android-${TARGET_SHORT}-toolchain
 export ANDROID_INCLUDE=$TOOLCHAIN/sysroot/usr/include
 export NEW_TOOLCHAIN=$GITHUB_WORKSPACE/android-toolchain
 export NEW_INCLUDE=$NEW_TOOLCHAIN/sysroot/usr/include
-export NEW_CC=$NEW_TOOLCHAIN/bin/armv7a-linux-androideabi19-clang
+export NEW_CC=$NEW_TOOLCHAIN/bin/arm-linux-androideabi19-clang
 export CPPFLAGS="-I$ANDROID_INCLUDE -I$ANDROID_INCLUDE/$TARGET" # -I/usr/include -I/usr/lib
 export LDFLAGS="-L$GITHUB_WORKSPACE/api19/lib -L$NDK/platforms/android-$API/arch-$TARGET_SHORT/usr/lib"
 
