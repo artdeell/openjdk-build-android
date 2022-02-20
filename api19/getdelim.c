@@ -43,12 +43,12 @@
 # define restrict
 #endif
 
-
+/*
 #ifndef _POSIX_SOURCE
 typedef long ssize_t;
 #define SSIZE_MAX LONG_MAX
 #endif
-
+*/
 #define _GETDELIM_GROWBY 128    /* amount to grow line buffer by */
 #define _GETDELIM_MINLEN 4      /* minimum line buffer size */
 
