@@ -64,7 +64,8 @@ export ANDROID_INCLUDE=$TOOLCHAIN/sysroot/usr/include
 export NEW_TOOLCHAIN=$GITHUB_WORKSPACE/android-toolchain
 export NEW_INCLUDE=$NEW_TOOLCHAIN/sysroot/usr/include
 export NEW_CC=$NEW_TOOLCHAIN/bin/arm-linux-androideabi-clang
-export CPPFLAGS="-I$ANDROID_INCLUDE -I$ANDROID_INCLUDE/$TARGET" # -I/usr/include -I/usr/lib
+export CFLAGS="-mfpu=vfp -mfloat-abi=hard"
+export CPPFLAGS="-I$ANDROID_INCLUDE -I$ANDROID_INCLUDE/$TARGET -mfpu=vfp -mfloat-abi=hard" # -I/usr/include -I/usr/lib
 export LDFLAGS="-L$GITHUB_WORKSPACE/api19/lib -L$NDK/platforms/android-$API/arch-$TARGET_SHORT/usr/lib"
 
 # Configure and build.
